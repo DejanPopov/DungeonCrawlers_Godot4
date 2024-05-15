@@ -1,6 +1,7 @@
-[gd_scene load_steps=34 format=3 uid="uid://d4lbyuvtx7bmy"]
+[gd_scene load_steps=35 format=3 uid="uid://d4lbyuvtx7bmy"]
 
 [ext_resource type="Texture2D" uid="uid://b3d4s75xtbj7p" path="res://Assets/Sprites/Characters/Player/Running/Running_011.png" id="1_q2ln2"]
+[ext_resource type="Script" path="res://Scripts/Character/Player/Player.cs" id="1_ypwly"]
 [ext_resource type="Texture2D" uid="uid://cfako4ve0v6ke" path="res://Assets/Sprites/Characters/Player/Idle Blinking/Idle Blinking_000.png" id="2_dgi7y"]
 [ext_resource type="Texture2D" uid="uid://dq43xybu6s14k" path="res://Assets/Sprites/Characters/Player/Idle Blinking/Idle Blinking_001.png" id="3_tmawq"]
 [ext_resource type="Texture2D" uid="uid://mcklrrcvadlb" path="res://Assets/Sprites/Characters/Player/Idle Blinking/Idle Blinking_002.png" id="4_q5hbp"]
@@ -70,6 +71,7 @@ _data = {
 }
 
 [node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_ypwly")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.260491, 0, 0)
