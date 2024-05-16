@@ -3,7 +3,17 @@ using System;
 
 public partial class Player : CharacterBody3D
 {
+    [ExportGroup("Required Nodes")] // Groups the exports in GODOT by comment "Required Nodes"
+    [Export] private AnimationPlayer animPlayerNode;
+    [Export] private Sprite3D spriteNode;
+
     private Vector2 direction = new();
+
+    public override void _Ready()
+    {
+        GD.Print(animPlayerNode.Name);
+        GD.Print(spriteNode.Name);
+    }
 
     public override void _PhysicsProcess(double delta)
     {   
