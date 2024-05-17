@@ -3,7 +3,7 @@ using System;
 
 public partial class Player : CharacterBody3D
 {
-    [ExportGroup("Required Nodes")] // Groups the exports in GODOT by comment "Required Nodes"
+    [ExportGroup("Required Nodes")]
     [Export] private AnimationPlayer animPlayerNode;
     [Export] private Sprite3D spriteNode;
 
@@ -11,8 +11,7 @@ public partial class Player : CharacterBody3D
 
     public override void _Ready()
     {
-        GD.Print(animPlayerNode.Name);
-        GD.Print(spriteNode.Name);
+        animPlayerNode.Play("Idle");
     }
 
     public override void _PhysicsProcess(double delta)
@@ -33,5 +32,14 @@ public partial class Player : CharacterBody3D
             "MoveBackward",
             "MoveForward"
         );
+
+        if (direction == Vector2.Zero)
+        {
+            animPlayerNode.Play("Idle");
+        }
+        else
+        {
+            animPlayerNode.Play("Move");
+        }
     }
 }
