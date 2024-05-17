@@ -51,7 +51,6 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_hmg18"]
 resource_name = "Move"
-loop_mode = 1
 step = 0.0833333
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -79,7 +78,7 @@ spriteNode = NodePath("Sprite3D")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.260491, 0, 0)
-texture = ExtResource("20_lejit")
+texture = ExtResource("2_dgi7y")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
