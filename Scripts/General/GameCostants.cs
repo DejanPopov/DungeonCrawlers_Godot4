@@ -1,5 +1,3 @@
-//Constants are variables that cant be changed 
-// once given value (const)
 public class GameConstants
 {
     // Animations
