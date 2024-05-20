@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://d4lbyuvtx7bmy"]
+[gd_scene load_steps=38 format=3 uid="uid://d4lbyuvtx7bmy"]
 
 [ext_resource type="Texture2D" uid="uid://b3d4s75xtbj7p" path="res://Assets/Sprites/Characters/Player/Running/Running_011.png" id="1_q2ln2"]
 [ext_resource type="Script" path="res://Scripts/Character/Player/Player.cs" id="1_ypwly"]
@@ -33,6 +33,7 @@
 [ext_resource type="Texture2D" uid="uid://86li6ea3sda4" path="res://Assets/Sprites/Characters/Player/Running/Running_010.png" id="30_n4iev"]
 [ext_resource type="Script" path="res://Scripts/Character/Player/PlayerIdleState.cs" id="32_0itdg"]
 [ext_resource type="Script" path="res://Scripts/Character/Player/PlayerMoveState.cs" id="33_yucvf"]
+[ext_resource type="Script" path="res://Scripts/Character/StateMachine.cs" id="34_7ocat"]
 
 [sub_resource type="Animation" id="Animation_61r5m"]
 resource_name = "Idle"
@@ -93,3 +94,7 @@ script = ExtResource("32_0itdg")
 
 [node name="MoveState" type="Node" parent="."]
 script = ExtResource("33_yucvf")
+
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("states")]
+script = ExtResource("34_7ocat")
+states = [NodePath("../IdleState"), NodePath("../MoveState")]
