@@ -120,10 +120,10 @@ script = ExtResource("32_0itdg")
 [node name="MoveState" type="Node" parent="."]
 script = ExtResource("33_yucvf")
 
+[node name="DashState" type="Node" parent="."]
+script = ExtResource("41_u8udj")
+
 [node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("currentState", "states")]
 script = ExtResource("34_7ocat")
 currentState = NodePath("../IdleState")
-states = [NodePath("../IdleState"), NodePath("../MoveState")]
-
-[node name="DashState" type="Node" parent="."]
-script = ExtResource("41_u8udj")
+states = [NodePath("../IdleState"), NodePath("../MoveState"), NodePath("../DashState")]
