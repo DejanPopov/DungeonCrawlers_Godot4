@@ -11,7 +11,7 @@ public partial class PlayerIdleState : Node
     {
         base._Notification(what);
 
-        if(what == 5001)
+        if (what == 5001)
         {
             Player characterNode = GetOwner<Player>();
             characterNode.animPlayerNode.Play(GameConstants.ANIM_IDLE);
