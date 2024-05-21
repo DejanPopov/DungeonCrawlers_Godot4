@@ -10,5 +10,3 @@ script = ExtResource("1_one21")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8.33594)
-
-[editable path="Player"]
