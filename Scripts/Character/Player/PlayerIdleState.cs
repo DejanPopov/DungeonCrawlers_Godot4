@@ -28,7 +28,6 @@ public partial class PlayerIdleState : Node
             characterNode.animPlayerNode.Play(GameConstants.ANIM_IDLE);
             SetPhysicsProcess(true);
         }
-
         else if (what == 5002)
         {
             SetPhysicsProcess(false);
