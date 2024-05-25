@@ -17,7 +17,7 @@ public partial class PlayerState : Node
 
         if (what == 5001)
         {
-            
+            EnterState();
             SetPhysicsProcess(true);
             SetProcessInput(true);
         }
