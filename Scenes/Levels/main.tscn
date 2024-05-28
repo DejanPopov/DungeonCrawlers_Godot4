@@ -24,3 +24,6 @@ data = {
 [node name="WalllGridMap" type="GridMap" parent="Environment"]
 mesh_library = ExtResource("3_iqm0b")
 cell_size = Vector3(4, 2, 1)
+data = {
+"cells": PackedInt32Array(65534, 65529, 2, 65535, 65529, 2, 65535, 65530, 2, 0, 65529, 2, 0, 65528, 2, 1, 65528, 2, 1, 65529, 2)
+}
