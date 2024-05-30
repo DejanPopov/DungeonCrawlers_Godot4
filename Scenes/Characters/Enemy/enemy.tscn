@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://s25vexk4gbij"]
+
+[ext_resource type="Texture2D" uid="uid://bavxxpd27quc2" path="res://Assets/Sprites/Characters/Enemy Knight/Idle/0_Demons_of_Darkness_Idle_001.png" id="1_hfwd7"]
+
+[node name="Enemy" type="CharacterBody3D"]
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+pixel_size = 0.0025
+texture = ExtResource("1_hfwd7")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
