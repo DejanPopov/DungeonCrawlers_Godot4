@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://d4lbyuvtx7bmy"]
+[gd_scene load_steps=44 format=3 uid="uid://d4lbyuvtx7bmy"]
 
 [ext_resource type="Texture2D" uid="uid://b3d4s75xtbj7p" path="res://Assets/Sprites/Characters/Player/Running/Running_011.png" id="1_q2ln2"]
 [ext_resource type="Script" path="res://Scripts/Character/Player/Player.cs" id="1_ypwly"]
@@ -32,15 +32,12 @@
 [ext_resource type="Texture2D" uid="uid://dhuj88vtg66pk" path="res://Assets/Sprites/Characters/Player/Running/Running_008.png" id="28_kmxre"]
 [ext_resource type="Texture2D" uid="uid://sv3rwpgb82v8" path="res://Assets/Sprites/Characters/Player/Running/Running_009.png" id="29_8wmjc"]
 [ext_resource type="Texture2D" uid="uid://86li6ea3sda4" path="res://Assets/Sprites/Characters/Player/Running/Running_010.png" id="30_n4iev"]
-[ext_resource type="Script" path="res://Scripts/Character/Player/PlayerIdleState.cs" id="32_0itdg"]
 [ext_resource type="Texture2D" uid="uid://dwexkof828x5c" path="res://Assets/Sprites/Characters/Player/Sliding/Sliding_001.png" id="33_rv2km"]
-[ext_resource type="Script" path="res://Scripts/Character/Player/PlayerMoveState.cs" id="33_yucvf"]
-[ext_resource type="Script" path="res://Scripts/Character/StateMachine.cs" id="34_7ocat"]
 [ext_resource type="Texture2D" uid="uid://bawtbcd6gdp68" path="res://Assets/Sprites/Characters/Player/Sliding/Sliding_002.png" id="34_gmqv1"]
 [ext_resource type="Texture2D" uid="uid://du8ntj1p6hlqb" path="res://Assets/Sprites/Characters/Player/Sliding/Sliding_003.png" id="35_y7dl7"]
 [ext_resource type="Texture2D" uid="uid://17873sdkevdk" path="res://Assets/Sprites/Characters/Player/Sliding/Sliding_004.png" id="36_otima"]
 [ext_resource type="Texture2D" uid="uid://c74fwgs4h3x7f" path="res://Assets/Sprites/Characters/Player/Sliding/Sliding_005.png" id="37_cbnu4"]
-[ext_resource type="Script" path="res://Scripts/Character/Player/PlayerDashState.cs" id="41_u8udj"]
+[ext_resource type="PackedScene" uid="uid://ce1uy4cjw5j0m" path="res://Scenes/Characters/state_machine.tscn" id="38_e4je7"]
 
 [sub_resource type="Animation" id="Animation_0gxrx"]
 resource_name = "Dash"
@@ -105,7 +102,7 @@ collision_layer = 2
 script = ExtResource("1_ypwly")
 AnimPlayerNode = NodePath("AnimationPlayer")
 SpriteNode = NodePath("Sprite3D")
-StateMachineNode = NodePath("StateMachine")
+StateMachineNode = NodePath("")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.260491, 0, 0)
@@ -118,24 +115,8 @@ libraries = {
 "": SubResource("AnimationLibrary_k8q1t")
 }
 
-[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("currentState", "states")]
-script = ExtResource("34_7ocat")
-currentState = NodePath("IdleState")
-states = [NodePath("IdleState"), NodePath("MoveState"), NodePath("DashState")]
-
-[node name="IdleState" type="Node" parent="StateMachine"]
-script = ExtResource("32_0itdg")
-
-[node name="MoveState" type="Node" parent="StateMachine"]
-script = ExtResource("33_yucvf")
-
-[node name="DashState" type="Node" parent="StateMachine" node_paths=PackedStringArray("dashTimerNode")]
-script = ExtResource("41_u8udj")
-dashTimerNode = NodePath("Timer")
-
-[node name="Timer" type="Timer" parent="StateMachine/DashState"]
-wait_time = 0.4
-one_shot = true
+[node name="StateMachine" parent="." node_paths=PackedStringArray("states") instance=ExtResource("38_e4je7")]
+states = [null, null, null]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.210603, 0.271683, 0)
