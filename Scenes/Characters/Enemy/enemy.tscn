@@ -1,4 +1,4 @@
-[gd_scene load_steps=107 format=3 uid="uid://s25vexk4gbij"]
+[gd_scene load_steps=108 format=3 uid="uid://s25vexk4gbij"]
 
 [ext_resource type="Texture2D" uid="uid://cvvr88n5l7ayu" path="res://Assets/Sprites/Characters/Enemy Knight/TakeHit/0_Demons_of_Darkness_Hurt_011.png" id="1_0awgw"]
 [ext_resource type="Texture2D" uid="uid://dbywm6nyoon8w" path="res://Assets/Sprites/Characters/Enemy Knight/Death/smoke-Fx3_17.png" id="1_1u0kr"]
@@ -99,6 +99,7 @@
 [ext_resource type="Texture2D" uid="uid://cifgqfus1nbbr" path="res://Assets/Sprites/Characters/Enemy Knight/Move/0_Demons_of_Darkness_Walking_021.png" id="97_0n33r"]
 [ext_resource type="Texture2D" uid="uid://5sd1k77g1jwr" path="res://Assets/Sprites/Characters/Enemy Knight/Move/0_Demons_of_Darkness_Walking_022.png" id="98_8jxnq"]
 [ext_resource type="Texture2D" uid="uid://dgyyously7om4" path="res://Assets/Sprites/Characters/Enemy Knight/Move/0_Demons_of_Darkness_Walking_023.png" id="99_6nqlr"]
+[ext_resource type="PackedScene" uid="uid://ce1uy4cjw5j0m" path="res://Scenes/Characters/state_machine.tscn" id="100_tonmu"]
 
 [sub_resource type="Animation" id="Animation_4h0t2"]
 resource_name = "Attack"
@@ -219,3 +220,5 @@ libraries = {
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0246925, 0.212011, 0)
 shape = SubResource("CapsuleShape3D_8dqjx")
+
+[node name="StateMachine" parent="." instance=ExtResource("100_tonmu")]
