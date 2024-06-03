@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://d4lbyuvtx7bmy"]
+[gd_scene load_steps=47 format=3 uid="uid://d4lbyuvtx7bmy"]
 
 [ext_resource type="Texture2D" uid="uid://b3d4s75xtbj7p" path="res://Assets/Sprites/Characters/Player/Running/Running_011.png" id="1_q2ln2"]
 [ext_resource type="Script" path="res://Scripts/Character/Player/Player.cs" id="1_ypwly"]
@@ -38,6 +38,9 @@
 [ext_resource type="Texture2D" uid="uid://17873sdkevdk" path="res://Assets/Sprites/Characters/Player/Sliding/Sliding_004.png" id="36_otima"]
 [ext_resource type="Texture2D" uid="uid://c74fwgs4h3x7f" path="res://Assets/Sprites/Characters/Player/Sliding/Sliding_005.png" id="37_cbnu4"]
 [ext_resource type="PackedScene" uid="uid://ce1uy4cjw5j0m" path="res://Scenes/Characters/state_machine.tscn" id="38_e4je7"]
+[ext_resource type="Script" path="res://Scripts/Character/Player/PlayerIdleState.cs" id="39_7au0j"]
+[ext_resource type="Script" path="res://Scripts/Character/Player/PlayerMoveState.cs" id="40_8hdoc"]
+[ext_resource type="Script" path="res://Scripts/Character/Player/PlayerDashState.cs" id="41_e6myn"]
 
 [sub_resource type="Animation" id="Animation_0gxrx"]
 resource_name = "Dash"
@@ -97,11 +100,12 @@ _data = {
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_dyle8"]
 
-[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("AnimPlayerNode", "SpriteNode")]
+[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("AnimPlayerNode", "SpriteNode", "StateMachineNode")]
 collision_layer = 2
 script = ExtResource("1_ypwly")
 AnimPlayerNode = NodePath("AnimationPlayer")
 SpriteNode = NodePath("Sprite3D")
+StateMachineNode = NodePath("StateMachine")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.260491, 0, 0)
@@ -114,8 +118,23 @@ libraries = {
 "": SubResource("AnimationLibrary_k8q1t")
 }
 
-[node name="StateMachine" parent="." node_paths=PackedStringArray("states") instance=ExtResource("38_e4je7")]
-states = [null, null, null]
+[node name="StateMachine" parent="." node_paths=PackedStringArray("currentState", "states") instance=ExtResource("38_e4je7")]
+currentState = NodePath("IdleState")
+states = [NodePath("MoveState"), NodePath("DashState"), NodePath("IdleState")]
+
+[node name="IdleState" type="Node" parent="StateMachine"]
+script = ExtResource("39_7au0j")
+
+[node name="MoveState" type="Node" parent="StateMachine"]
+script = ExtResource("40_8hdoc")
+
+[node name="DashState" type="Node" parent="StateMachine" node_paths=PackedStringArray("dashTimerNode")]
+script = ExtResource("41_e6myn")
+dashTimerNode = NodePath("Timer")
+
+[node name="Timer" type="Timer" parent="StateMachine/DashState"]
+wait_time = 0.4
+one_shot = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.210603, 0.278024, 0)
