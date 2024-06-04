@@ -2,10 +2,11 @@ using Godot;
 
 public abstract partial class CharacterState : Node
 {
-    protected Player characterNode;
+    protected Character characterNode;
 
     public override void _Ready()
     {
+        characterNode = GetOwner<Character>();
         SetPhysicsProcess(false);
         SetProcessInput(false);
     }
