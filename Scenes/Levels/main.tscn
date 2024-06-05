@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dxmxn100tuf5j"]
+[gd_scene load_steps=16 format=3 uid="uid://dxmxn100tuf5j"]
 
 [ext_resource type="Script" path="res://Scripts/Levels/Main.cs" id="1_one21"]
 [ext_resource type="PackedScene" uid="uid://d4lbyuvtx7bmy" path="res://Scenes/Characters/Player/player.tscn" id="2_vnra5"]
@@ -67,6 +67,13 @@ point_count = 7
 [sub_resource type="Curve3D" id="Curve3D_h3mjd"]
 _data = {
 "points": PackedVector3Array(0, 0, 0, 0, 0, 0, -2.00115, 0, -1.77135, 0, 0, 0, 0, 0, 0, -5.07989, 0, 3.11553, 0, 0, 0, 0, 0, 0, -2.73419, 0, 6.34087, 0, 0, 0, 0, 0, 0, 0.588894, 0, 2.87118, 0, 0, 0, 0, 0, 0, 4.74274, 0, 6.34087, 0, 0, 0, 0, 0, 0, 5.76899, 0, -3.67724, 0, 0, 0, 0, 0, 0, -2.00115, 0, -1.77135),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 7
+
+[sub_resource type="Curve3D" id="Curve3D_jsijk"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -1.3311, 0, -1.93234, 0, 0, 0, 0, 0, 0, -2.55282, 0, 1.1464, 0, 0, 0, 0, 0, 0, -1.13563, 0, 5.25138, 0, 0, 0, 0, 0, 0, 2.08971, 0, 1.293, 0, 0, 0, 0, 0, 0, 6.09696, 0, -2.76311, 0, 0, 0, 0, 0, 0, 0.965731, 0, -7.30791, 0, 0, 0, 0, 0, 0, -1.3311, 0, -1.93234),
 "tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0)
 }
 point_count = 7
@@ -143,3 +150,7 @@ curve = SubResource("Curve3D_y7hpn")
 [node name="Path3D9" type="Path3D" parent="Enemies"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.5729, 3.51245, -17.8371)
 curve = SubResource("Curve3D_h3mjd")
+
+[node name="Path3D10" type="Path3D" parent="Enemies"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.0806, 1.48267, 16.9086)
+curve = SubResource("Curve3D_jsijk")
