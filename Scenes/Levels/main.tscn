@@ -9,6 +9,11 @@
 size = Vector3(2.13428, 2.73621, 1)
 
 [sub_resource type="Curve3D" id="Curve3D_xw807"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -1.34378, 0, -3.61893, 0, 0, 0, 0, 0, 0, 3.95726, 0, -4.92994, 0, 0, 0, 0, 0, 0, 9.08729, 0, -2.99193, 0, 0, 0, 0, 0, 0, 8.80229, 0, 1.2261, 0, 0, 0, 0, 0, 0, 5.09727, 0, 3.16411, 0, 0, 0, 0, 0, 0, -1.79978, 0, 1.6821),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0)
+}
+point_count = 6
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_one21")
