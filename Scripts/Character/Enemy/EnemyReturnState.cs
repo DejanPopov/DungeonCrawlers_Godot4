@@ -18,7 +18,6 @@ public partial class EnemyReturnState : EnemyState
     {
         characterNode.AnimPlayerNode.Play(GameConstants.ANIM_MOVE);
 
-
         characterNode.GlobalPosition = destination;
     }
 }
