@@ -229,8 +229,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0246925, 0.212011, 0)
 shape = SubResource("CapsuleShape3D_8dqjx")
 
 [node name="StateMachine" parent="." node_paths=PackedStringArray("currentState", "states") instance=ExtResource("100_tonmu")]
-currentState = NodePath("IdleState")
-states = [NodePath("IdleState")]
+currentState = NodePath("ReturnState")
+states = [NodePath("IdleState"), NodePath("ReturnState")]
 
 [node name="IdleState" type="Node" parent="StateMachine"]
 script = ExtResource("102_xbv1t")
