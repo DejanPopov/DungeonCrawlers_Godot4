@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://dxmxn100tuf5j"]
+[gd_scene load_steps=7 format=3 uid="uid://dxmxn100tuf5j"]
 
 [ext_resource type="Script" path="res://Scripts/Levels/Main.cs" id="1_one21"]
 [ext_resource type="PackedScene" uid="uid://d4lbyuvtx7bmy" path="res://Scenes/Characters/Player/player.tscn" id="2_vnra5"]
@@ -7,6 +7,8 @@
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7tyao"]
 size = Vector3(2.13428, 2.73621, 1)
+
+[sub_resource type="Curve3D" id="Curve3D_xw807"]
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_one21")
@@ -42,3 +44,9 @@ shape = SubResource("BoxShape3D_7tyao")
 
 [node name="Enemy" parent="." instance=ExtResource("4_xgd2j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.0174, 1.91406, 14.3656)
+
+[node name="Enemies" type="Node3D" parent="."]
+
+[node name="Path3D" type="Path3D" parent="Enemies"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.7799, 0, 11.1512)
+curve = SubResource("Curve3D_xw807")
