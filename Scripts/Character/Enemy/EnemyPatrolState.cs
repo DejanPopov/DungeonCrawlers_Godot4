@@ -19,6 +19,11 @@ public partial class EnemyPatrolState : EnemyState
         idleTimerNode.Timeout += HandleTimeout;
     }
 
+    protected override void ExitState()
+    {
+        base.ExitState();
+    }
+
     public override void _PhysicsProcess(double delta)
     {
         if (!idleTimerNode.IsStopped())
