@@ -13,15 +13,16 @@ public partial class EnemyPatrolState : EnemyState
         pointIndex = 1;
         destination = GetPointGlobalPosition(pointIndex);
         characterNode.AgentNode.TargetPosition = destination;
-
-        characterNode.AgentNode.NavigationFinished += HandleNavigationFinished;
         
+        characterNode.AgentNode.NavigationFinished += HandleNavigationFinished;
         idleTimerNode.Timeout += HandleTimeout;
+
     }
 
     protected override void ExitState()
     {
-        base.ExitState();
+        characterNode.AgentNode.NavigationFinished -= HandleNavigationFinished;
+        idleTimerNode.Timeout -= HandleTimeout;
     }
 
     public override void _PhysicsProcess(double delta)
