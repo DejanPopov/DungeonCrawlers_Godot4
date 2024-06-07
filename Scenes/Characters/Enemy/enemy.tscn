@@ -1,4 +1,4 @@
-[gd_scene load_steps=112 format=3 uid="uid://s25vexk4gbij"]
+[gd_scene load_steps=113 format=3 uid="uid://s25vexk4gbij"]
 
 [ext_resource type="Texture2D" uid="uid://cvvr88n5l7ayu" path="res://Assets/Sprites/Characters/Enemy Knight/TakeHit/0_Demons_of_Darkness_Hurt_011.png" id="1_0awgw"]
 [ext_resource type="Script" path="res://Scripts/Character/Enemy/Enemy.cs" id="1_01l1x"]
@@ -210,6 +210,9 @@ _data = {
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_8dqjx"]
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_n8wov"]
+radius = 6.0
+
 [node name="Enemy" type="CharacterBody3D" node_paths=PackedStringArray("AnimPlayerNode", "SpriteNode", "StateMachineNode", "AgentNode")]
 script = ExtResource("1_01l1x")
 AnimPlayerNode = NodePath("AnimationPlayer")
@@ -249,3 +252,8 @@ one_shot = true
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
 debug_enabled = true
+
+[node name="ChaseArea" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ChaseArea"]
+shape = SubResource("SphereShape3D_n8wov")
