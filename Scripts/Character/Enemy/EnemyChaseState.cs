@@ -1,11 +1,15 @@
 using Godot;
 using System;
+using System.Linq;
 
 public partial class EnemyChaseState : EnemyState
 {
+
+    private CharacterBody3D target;
     protected override void EnterState()
     {
         characterNode.AnimPlayerNode.Play(GameConstants.ANIM_MOVE);
-        GD.Print("Enter Chase State");
+        target = characterNode.ChaseAreaNode.GetOverlappingBodies().First() as CharacterBody3D;
     }
 }
+
