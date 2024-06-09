@@ -248,6 +248,10 @@ script = ExtResource("103_31lh1")
 [node name="ChaseState" type="Node" parent="StateMachine"]
 script = ExtResource("104_1fjf8")
 
+[node name="Timer" type="Timer" parent="StateMachine/ChaseState"]
+wait_time = 0.5
+autostart = true
+
 [node name="PatrolState" type="Node" parent="StateMachine" node_paths=PackedStringArray("idleTimerNode")]
 script = ExtResource("104_pqxoq")
 idleTimerNode = NodePath("Timer")
