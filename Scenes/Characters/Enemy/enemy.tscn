@@ -245,8 +245,9 @@ script = ExtResource("102_xbv1t")
 [node name="ReturnState" type="Node" parent="StateMachine"]
 script = ExtResource("103_31lh1")
 
-[node name="ChaseState" type="Node" parent="StateMachine"]
+[node name="ChaseState" type="Node" parent="StateMachine" node_paths=PackedStringArray("timerNode")]
 script = ExtResource("104_1fjf8")
+timerNode = NodePath("Timer")
 
 [node name="Timer" type="Timer" parent="StateMachine/ChaseState"]
 wait_time = 0.5
