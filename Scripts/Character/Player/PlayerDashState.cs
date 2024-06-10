@@ -5,6 +5,18 @@ public partial class PlayerDashState : PlayerState
 {
     [Export] private Timer dashTimerNode;
     [Export(PropertyHint.Range, "0,20,0.1")] private float speed = 10;
+    
+        public override void _PhysicsProcess(double delta)
+    {
+        characterNode.MoveAndSlide();
+        characterNode.Flip();
+    }
+
+    private void HandleDashTimeout()
+    {
+        characterNode.Velocity = Vector3.Zero;
+        characterNode.StateMachineNode.SwitchState<PlayerIdleState>();
+    }
 
     public override void _Ready()
     {
@@ -27,17 +39,5 @@ public partial class PlayerDashState : PlayerState
         
         characterNode.Velocity *= speed;
         dashTimerNode.Start();
-    }
-
-    public override void _PhysicsProcess(double delta)
-    {
-        characterNode.MoveAndSlide();
-        characterNode.Flip();
-    }
-
-    private void HandleDashTimeout()
-    {
-        characterNode.Velocity = Vector3.Zero;
-        characterNode.StateMachineNode.SwitchState<PlayerIdleState>();
     }
 }

@@ -7,6 +7,16 @@ public partial class EnemyPatrolState : EnemyState
     [Export(PropertyHint.Range, "0,20,0.1")] private float maxIdleTime = 4;
     private int pointIndex = 0;
 
+        public override void _PhysicsProcess(double delta)
+    {
+        if (!idleTimerNode.IsStopped())
+        {
+            return;
+        }
+        
+        Move();
+    }
+
     protected override void EnterState()
     {
         characterNode.AnimPlayerNode.Play(GameConstants.ANIM_MOVE);
@@ -25,16 +35,6 @@ public partial class EnemyPatrolState : EnemyState
         characterNode.AgentNode.NavigationFinished -= HandleNavigationFinished;
         idleTimerNode.Timeout -= HandleTimeout;
         characterNode.ChaseAreaNode.BodyEntered -= HandleChaseAreaBodyEntered;
-    }
-
-    public override void _PhysicsProcess(double delta)
-    {
-        if (!idleTimerNode.IsStopped())
-        {
-            return;
-        }
-        
-        Move();
     }
 
     private void HandleNavigationFinished()

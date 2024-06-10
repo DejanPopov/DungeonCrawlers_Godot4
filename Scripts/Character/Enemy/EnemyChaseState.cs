@@ -5,8 +5,13 @@ using System.Linq;
 public partial class EnemyChaseState : EnemyState
 {
     [Export] private Timer timerNode;
-
     private CharacterBody3D target;
+
+        public override void _PhysicsProcess(double delta)
+    {
+        Move();
+    }
+
     protected override void EnterState()
     {
         characterNode.AnimPlayerNode.Play(GameConstants.ANIM_MOVE);
@@ -14,6 +19,13 @@ public partial class EnemyChaseState : EnemyState
         timerNode.Timeout += HandleTimeout;
         characterNode.AttackAreaNode.BodyEntered += HandleAttackAreaBodyEntered;
         characterNode.ChaseAreaNode.BodyExited += HandleChaseAreaBodyExisted;
+    }
+
+        protected override void ExitState()
+    {
+        timerNode.Timeout -= HandleTimeout;
+        characterNode.AttackAreaNode.BodyEntered -= HandleAttackAreaBodyEntered;
+        characterNode.ChaseAreaNode.BodyExited -= HandleChaseAreaBodyExisted;
     }
 
     private void HandleChaseAreaBodyExisted(Node3D body)
@@ -26,23 +38,13 @@ public partial class EnemyChaseState : EnemyState
         characterNode.StateMachineNode.SwitchState<EnemyAttackState>();
     }
 
-    protected override void ExitState()
-    {
-        timerNode.Timeout -= HandleTimeout;
-        characterNode.AttackAreaNode.BodyEntered -= HandleAttackAreaBodyEntered;
-        characterNode.ChaseAreaNode.BodyExited -= HandleChaseAreaBodyExisted;
-    }
-
     private void HandleTimeout()
     {
         destination = target.GlobalPosition;
         characterNode.AgentNode.TargetPosition = destination;
     }
 
-    public override void _PhysicsProcess(double delta)
-    {
-        Move();
-    }
+
 
 
 }
