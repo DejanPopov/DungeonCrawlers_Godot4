@@ -1,4 +1,4 @@
-[gd_scene load_steps=73 format=3 uid="uid://d4lbyuvtx7bmy"]
+[gd_scene load_steps=74 format=3 uid="uid://d4lbyuvtx7bmy"]
 
 [ext_resource type="Texture2D" uid="uid://b3d4s75xtbj7p" path="res://Assets/Sprites/Characters/Player/Running/Running_011.png" id="1_q2ln2"]
 [ext_resource type="Script" path="res://Scripts/Character/Player/Player.cs" id="1_ypwly"]
@@ -65,6 +65,7 @@
 [ext_resource type="Texture2D" uid="uid://dsrtp4byrjjw0" path="res://Assets/Sprites/Characters/Player/Slashing/Slashing_008.png" id="59_5dssx"]
 [ext_resource type="Texture2D" uid="uid://pede06vu7lmt" path="res://Assets/Sprites/Characters/Player/Slashing/Slashing_009.png" id="60_5tagb"]
 [ext_resource type="Texture2D" uid="uid://bd7ksgv7rvltw" path="res://Assets/Sprites/Characters/Player/Slashing/Slashing_010.png" id="61_f55uu"]
+[ext_resource type="Script" path="res://Scripts/Character/Player/PlayerAttackState.cs" id="66_o45h8"]
 
 [sub_resource type="Animation" id="Animation_0gxrx"]
 resource_name = "Dash"
@@ -194,6 +195,9 @@ dashTimerNode = NodePath("Timer")
 [node name="Timer" type="Timer" parent="StateMachine/DashState"]
 wait_time = 0.4
 one_shot = true
+
+[node name="AttackState" type="Node" parent="StateMachine"]
+script = ExtResource("66_o45h8")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.210603, 0.278024, 0)
