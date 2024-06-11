@@ -3,8 +3,17 @@ using System;
 
 public partial class PlayerAttackState : PlayerState
 {
+    [Export] private Timer comboTimerNode;
+
     private int comboCounter  = 1;
     private int maxComboCount = 2;
+
+    public override void _Ready()
+    {
+        base._Ready();
+
+        comboTimerNode.Timeout += () => comboCounter = 1;
+    }
 
     protected override void EnterState()
     {
