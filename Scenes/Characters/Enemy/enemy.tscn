@@ -1,9 +1,10 @@
-[gd_scene load_steps=116 format=3 uid="uid://s25vexk4gbij"]
+[gd_scene load_steps=119 format=3 uid="uid://s25vexk4gbij"]
 
 [ext_resource type="Texture2D" uid="uid://cvvr88n5l7ayu" path="res://Assets/Sprites/Characters/Enemy Knight/TakeHit/0_Demons_of_Darkness_Hurt_011.png" id="1_0awgw"]
 [ext_resource type="Script" path="res://Scripts/Character/Enemy/Enemy.cs" id="1_01l1x"]
 [ext_resource type="Texture2D" uid="uid://dbywm6nyoon8w" path="res://Assets/Sprites/Characters/Enemy Knight/Death/smoke-Fx3_17.png" id="1_1u0kr"]
 [ext_resource type="Texture2D" uid="uid://bavxxpd27quc2" path="res://Assets/Sprites/Characters/Enemy Knight/Idle/0_Demons_of_Darkness_Idle_001.png" id="1_hfwd7"]
+[ext_resource type="Script" path="res://Scripts/Resources/StatResource.cs" id="2_1w8e8"]
 [ext_resource type="Texture2D" uid="uid://bdositi4w0ee4" path="res://Assets/Sprites/Characters/Enemy Knight/Idle/0_Demons_of_Darkness_Idle_000.png" id="2_yr4i2"]
 [ext_resource type="Texture2D" uid="uid://dvlfg538wtij1" path="res://Assets/Sprites/Characters/Enemy Knight/Idle/0_Demons_of_Darkness_Idle_002.png" id="4_e8320"]
 [ext_resource type="Texture2D" uid="uid://bynxs2xdrkf6v" path="res://Assets/Sprites/Characters/Enemy Knight/Idle/0_Demons_of_Darkness_Idle_003.png" id="5_igick"]
@@ -106,6 +107,16 @@
 [ext_resource type="Script" path="res://Scripts/Character/Enemy/EnemyChaseState.cs" id="104_1fjf8"]
 [ext_resource type="Script" path="res://Scripts/Character/Enemy/EnemyPatrolState.cs" id="104_pqxoq"]
 [ext_resource type="Script" path="res://Scripts/Character/Enemy/EnemyAttackState.cs" id="106_f87ne"]
+
+[sub_resource type="Resource" id="Resource_g30af"]
+script = ExtResource("2_1w8e8")
+StatType = 0
+StatValue = 20.0
+
+[sub_resource type="Resource" id="Resource_w1fxq"]
+script = ExtResource("2_1w8e8")
+StatType = 1
+StatValue = 4.0
 
 [sub_resource type="Animation" id="Animation_4h0t2"]
 resource_name = "Attack"
@@ -222,6 +233,7 @@ radius = 1.4
 collision_layer = 4
 collision_mask = 3
 script = ExtResource("1_01l1x")
+stats = Array[Object]([SubResource("Resource_g30af"), SubResource("Resource_w1fxq")])
 AnimPlayerNode = NodePath("AnimationPlayer")
 SpriteNode = NodePath("Sprite3D")
 StateMachineNode = NodePath("StateMachine")

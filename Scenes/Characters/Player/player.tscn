@@ -1,8 +1,9 @@
-[gd_scene load_steps=75 format=3 uid="uid://d4lbyuvtx7bmy"]
+[gd_scene load_steps=78 format=3 uid="uid://d4lbyuvtx7bmy"]
 
 [ext_resource type="Texture2D" uid="uid://b3d4s75xtbj7p" path="res://Assets/Sprites/Characters/Player/Running/Running_011.png" id="1_q2ln2"]
 [ext_resource type="Script" path="res://Scripts/Character/Player/Player.cs" id="1_ypwly"]
 [ext_resource type="Texture2D" uid="uid://c31cm2d4htw1o" path="res://Assets/Sprites/Characters/Player/Sliding/Sliding_000.png" id="2_3tbth"]
+[ext_resource type="Script" path="res://Scripts/Resources/StatResource.cs" id="2_31en5"]
 [ext_resource type="Texture2D" uid="uid://c6t5jyumm7tea" path="res://Assets/Sprites/Characters/Player/Kicking/Kicking_011.png" id="2_436v4"]
 [ext_resource type="Texture2D" uid="uid://cfako4ve0v6ke" path="res://Assets/Sprites/Characters/Player/Idle Blinking/Idle Blinking_000.png" id="2_dgi7y"]
 [ext_resource type="Texture2D" uid="uid://bl8sopr0ry2r7" path="res://Assets/Sprites/Characters/Player/Slashing/Slashing_011.png" id="2_xeeoh"]
@@ -66,6 +67,16 @@
 [ext_resource type="Texture2D" uid="uid://pede06vu7lmt" path="res://Assets/Sprites/Characters/Player/Slashing/Slashing_009.png" id="60_5tagb"]
 [ext_resource type="Texture2D" uid="uid://bd7ksgv7rvltw" path="res://Assets/Sprites/Characters/Player/Slashing/Slashing_010.png" id="61_f55uu"]
 [ext_resource type="Script" path="res://Scripts/Character/Player/PlayerAttackState.cs" id="66_o45h8"]
+
+[sub_resource type="Resource" id="Resource_ps7h6"]
+script = ExtResource("2_31en5")
+StatType = 0
+StatValue = 100.0
+
+[sub_resource type="Resource" id="Resource_wm7ag"]
+script = ExtResource("2_31en5")
+StatType = 1
+StatValue = 3.0
 
 [sub_resource type="Animation" id="Animation_xyty7"]
 resource_name = "Attack1"
@@ -166,6 +177,7 @@ size = Vector3(0.5, 0.5, 0.5)
 collision_layer = 2
 collision_mask = 5
 script = ExtResource("1_ypwly")
+stats = Array[Object]([SubResource("Resource_ps7h6"), SubResource("Resource_wm7ag")])
 AnimPlayerNode = NodePath("AnimationPlayer")
 SpriteNode = NodePath("Sprite3D")
 StateMachineNode = NodePath("StateMachine")
