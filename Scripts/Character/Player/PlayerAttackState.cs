@@ -25,6 +25,7 @@ public partial class PlayerAttackState : PlayerState
     protected override void ExitState()
     {
         characterNode.AnimPlayerNode.AnimationFinished -= HandleAnimationFinished;
+        comboTimerNode.Start();
     }
 
     private void HandleAnimationFinished(StringName animName)
