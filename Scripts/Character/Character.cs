@@ -26,7 +26,23 @@ public abstract partial class Character : CharacterBody3D
 
     private void HandleHurtboxEntered(Area3D area)
     {
-        GD.Print($"{area.Name} hit");
+        StatResource health = GetStatResource(Stat.Health);
+        GD.Print(health.StatValue);
+    }
+
+    public StatResource GetStatResource(Stat stat)
+    {
+        StatResource result = null;
+
+        foreach (StatResource element in stats)
+        {
+            if (element.StatType == stat)
+            {
+                result = element;
+            }
+        }
+
+        return result;
     }
 
     public void Flip()
