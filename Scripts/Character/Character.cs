@@ -1,5 +1,6 @@
 using System;
 using Godot;
+using System.Linq;
 
 public abstract partial class Character : CharacterBody3D
 {
@@ -32,17 +33,7 @@ public abstract partial class Character : CharacterBody3D
 
     public StatResource GetStatResource(Stat stat)
     {
-        StatResource result = null;
-
-        foreach (StatResource element in stats)
-        {
-            if (element.StatType == stat)
-            {
-                result = element;
-            }
-        }
-
-        return result;
+        return stats.Where((element) => element.StatType == stat).FirstOrDefault();
     }
 
     public void Flip()
