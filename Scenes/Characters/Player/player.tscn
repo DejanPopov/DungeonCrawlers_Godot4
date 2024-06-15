@@ -224,7 +224,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.210603, 0.278024, 0)
 shape = SubResource("CapsuleShape3D_dyle8")
 
 [node name="Hitbox" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.544105, 0.435367, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.544105, -0.0555496, 0)
 collision_layer = 2
 collision_mask = 0
 
