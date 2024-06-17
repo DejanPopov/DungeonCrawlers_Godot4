@@ -201,7 +201,7 @@ _data = {
 [sub_resource type="BoxShape3D" id="BoxShape3D_i6eb6"]
 size = Vector3(0.5, 0.5, 0.5)
 
-[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("AnimPlayerNode", "SpriteNode", "StateMachineNode")]
+[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("AnimPlayerNode", "SpriteNode", "StateMachineNode", "HitBoxNode")]
 collision_layer = 2
 collision_mask = 5
 script = ExtResource("1_ypwly")
@@ -209,6 +209,7 @@ stats = Array[Object]([SubResource("Resource_ps7h6"), SubResource("Resource_wm7a
 AnimPlayerNode = NodePath("AnimationPlayer")
 SpriteNode = NodePath("Sprite3D")
 StateMachineNode = NodePath("StateMachine")
+HitBoxNode = NodePath("Hitbox")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.260491, 0, 0)

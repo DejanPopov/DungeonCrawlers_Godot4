@@ -11,6 +11,7 @@ public abstract partial class Character : CharacterBody3D
     [Export] public Sprite3D        SpriteNode       {get; private set;}
     [Export] public StateMachine    StateMachineNode {get; private set;}
     [Export] public Area3D          HurtBoxNode      {get; private set;}
+    [Export] public Area3D          HitBoxNode       {get; private set;}
 
     [ExportGroup("AI Nodes")]
     [Export] public NavigationAgent3D AgentNode      {get; private set;} 
