@@ -214,7 +214,7 @@ StateMachineNode = NodePath("StateMachine")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.260491, 0, 0)
 pixel_size = 0.0025
 texture_filter = 0
-texture = ExtResource("54_h14yr")
+texture = ExtResource("6_dmoj5")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -252,7 +252,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.210603, 0.278024, 0)
 shape = SubResource("CapsuleShape3D_dyle8")
 
 [node name="Hitbox" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.544105, -0.0555496, 0)
 collision_layer = 2
 collision_mask = 0
 
