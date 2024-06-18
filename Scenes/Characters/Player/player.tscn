@@ -201,7 +201,7 @@ _data = {
 [sub_resource type="BoxShape3D" id="BoxShape3D_i6eb6"]
 size = Vector3(0.5, 0.5, 0.5)
 
-[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("AnimPlayerNode", "SpriteNode", "StateMachineNode", "HitBoxNode", "HitBoxShapeNode")]
+[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("AnimPlayerNode", "SpriteNode", "StateMachineNode", "HurtBoxNode", "HitBoxNode", "HitBoxShapeNode")]
 collision_layer = 2
 collision_mask = 5
 script = ExtResource("1_ypwly")
@@ -209,6 +209,7 @@ stats = Array[Object]([SubResource("Resource_ps7h6"), SubResource("Resource_wm7a
 AnimPlayerNode = NodePath("AnimationPlayer")
 SpriteNode = NodePath("Sprite3D")
 StateMachineNode = NodePath("StateMachine")
+HurtBoxNode = NodePath("Hurtbox")
 HitBoxNode = NodePath("Hitbox")
 HitBoxShapeNode = NodePath("Hitbox/CollisionShape3D")
 
@@ -261,3 +262,11 @@ collision_mask = 0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.212964, 0, 0)
 shape = SubResource("BoxShape3D_i6eb6")
 disabled = true
+
+[node name="Hurtbox" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hurtbox"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.207203, 0.259004, 0)
+shape = SubResource("CapsuleShape3D_dyle8")
