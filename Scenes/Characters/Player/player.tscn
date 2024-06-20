@@ -169,6 +169,22 @@ tracks/0/keys = {
 "values": [ExtResource("2_3tbth"), ExtResource("33_rv2km"), ExtResource("34_gmqv1"), ExtResource("35_y7dl7"), ExtResource("36_otima"), ExtResource("37_cbnu4"), ExtResource("2_dgi7y")]
 }
 
+[sub_resource type="Animation" id="Animation_0v4kb"]
+resource_name = "Death"
+step = 0.0666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667, 0.333333, 0.4, 0.466667, 0.533333, 0.6, 0.666667, 0.733333, 0.8, 0.866667, 0.933333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("64_dgg74"), ExtResource("65_6mrj6"), ExtResource("66_bsdfn"), ExtResource("67_1h75y"), ExtResource("68_ne2vy"), ExtResource("69_7k6ws"), ExtResource("70_qn4ly"), ExtResource("71_r4sg8"), ExtResource("72_1qtwb"), ExtResource("73_gvo1p"), ExtResource("74_ebwcd"), ExtResource("75_n3a82"), ExtResource("76_3v3a3"), ExtResource("77_akeak"), ExtResource("3_7yxns")]
+}
+
 [sub_resource type="Animation" id="Animation_61r5m"]
 resource_name = "Idle"
 loop_mode = 1
@@ -200,22 +216,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [ExtResource("20_lejit"), ExtResource("21_khxy1"), ExtResource("22_oq572"), ExtResource("23_wr8n1"), ExtResource("24_2mj1m"), ExtResource("25_m1845"), ExtResource("26_lh7ei"), ExtResource("27_p36ak"), ExtResource("28_kmxre"), ExtResource("29_8wmjc"), ExtResource("30_n4iev"), ExtResource("1_q2ln2")]
-}
-
-[sub_resource type="Animation" id="Animation_0v4kb"]
-resource_name = "Death"
-step = 0.0666667
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite3D:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667, 0.333333, 0.4, 0.466667, 0.533333, 0.6, 0.666667, 0.733333, 0.8, 0.866667, 0.933333),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [ExtResource("64_dgg74"), ExtResource("65_6mrj6"), ExtResource("66_bsdfn"), ExtResource("67_1h75y"), ExtResource("68_ne2vy"), ExtResource("69_7k6ws"), ExtResource("70_qn4ly"), ExtResource("71_r4sg8"), ExtResource("72_1qtwb"), ExtResource("73_gvo1p"), ExtResource("74_ebwcd"), ExtResource("75_n3a82"), ExtResource("76_3v3a3"), ExtResource("77_akeak"), ExtResource("3_7yxns")]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_k8q1t"]
@@ -258,7 +258,7 @@ libraries = {
 
 [node name="StateMachine" parent="." node_paths=PackedStringArray("currentState", "states") instance=ExtResource("38_e4je7")]
 currentState = NodePath("IdleState")
-states = [NodePath("MoveState"), NodePath("DashState"), NodePath("IdleState"), NodePath("AttackState")]
+states = [NodePath("MoveState"), NodePath("DashState"), NodePath("IdleState"), NodePath("AttackState"), NodePath("DeathState")]
 
 [node name="IdleState" type="Node" parent="StateMachine"]
 script = ExtResource("39_7au0j")
@@ -281,6 +281,8 @@ comboTimerNode = NodePath("Timer")
 [node name="Timer" type="Timer" parent="StateMachine/AttackState"]
 wait_time = 2.0
 one_shot = true
+
+[node name="DeathState" type="Node" parent="StateMachine"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.210603, 0.278024, 0)
