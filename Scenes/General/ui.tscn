@@ -13,8 +13,10 @@ grow_vertical = 2
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 269.0
+offset_top = 91.0
+offset_right = 790.0
+offset_bottom = 270.0
 texture = ExtResource("1_4pkt4")
 
 [node name="Button" type="Button" parent="."]
