@@ -1,7 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://by20ndys82iir"]
+[gd_scene load_steps=5 format=3 uid="uid://by20ndys82iir"]
 
 [ext_resource type="Texture2D" uid="uid://cv2lcmhemjsim" path="res://Assets/Sprites/UI/UI Element 1.png" id="1_4pkt4"]
 [ext_resource type="FontFile" uid="uid://b66gtag0ot82l" path="res://Assets/RifficFree-Bold.ttf" id="2_x8d2t"]
+[ext_resource type="Texture2D" uid="uid://bcwf3jvo21o57" path="res://Assets/Sprites/UI/UI Element 2.png" id="3_mw7av"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_x3tce"]
+texture = ExtResource("3_mw7av")
+expand_margin_left = 48.0
+expand_margin_top = 8.0
+expand_margin_right = 48.0
+expand_margin_bottom = 16.0
 
 [node name="UI" type="Control"]
 layout_mode = 3
@@ -11,18 +19,30 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TextureRect" type="TextureRect" parent="."]
-layout_mode = 0
-offset_left = 269.0
-offset_top = 91.0
-offset_right = 790.0
-offset_bottom = 270.0
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -260.5
+offset_top = -110.5
+offset_right = 260.5
+offset_bottom = 110.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer"]
+layout_mode = 2
 texture = ExtResource("1_4pkt4")
 
-[node name="Button" type="Button" parent="."]
-layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
+[node name="Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("2_x8d2t")
 theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxTexture_x3tce")
+theme_override_styles/hover = SubResource("StyleBoxTexture_x3tce")
+theme_override_styles/focus = SubResource("StyleBoxTexture_x3tce")
 text = "Start Game"
