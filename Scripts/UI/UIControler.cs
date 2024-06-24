@@ -1,7 +1,7 @@
 using Godot;
 using System;
 using System.Collections.Generic;
-using System.Linq
+using System.Linq;
 
 public partial class UIControler : Control
 {
@@ -10,5 +10,7 @@ public partial class UIControler : Control
     public override void _Ready()
     {
         containers = GetChildren().Where((element) => element is UIContainer).Cast<UIContainer>().ToDictionary((element) => element.container);
+
+        containers[ContainerType.Start].Visible = true;
     }
 }

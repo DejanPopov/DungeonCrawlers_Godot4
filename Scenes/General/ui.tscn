@@ -1,6 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://by20ndys82iir"]
+[gd_scene load_steps=7 format=3 uid="uid://by20ndys82iir"]
 
 [ext_resource type="Texture2D" uid="uid://cv2lcmhemjsim" path="res://Assets/Sprites/UI/UI Element 1.png" id="1_4pkt4"]
+[ext_resource type="Script" path="res://Scripts/UI/UIControler.cs" id="1_otn3x"]
+[ext_resource type="Script" path="res://Scripts/UI/UIContainer.cs" id="2_iy836"]
 [ext_resource type="FontFile" uid="uid://b66gtag0ot82l" path="res://Assets/RifficFree-Bold.ttf" id="2_x8d2t"]
 [ext_resource type="Texture2D" uid="uid://bcwf3jvo21o57" path="res://Assets/Sprites/UI/UI Element 2.png" id="3_mw7av"]
 
@@ -18,8 +20,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_otn3x")
 
 [node name="Start" type="VBoxContainer" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -32,6 +36,7 @@ offset_right = 260.5
 offset_bottom = 110.5
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("2_iy836")
 
 [node name="TextureRect" type="TextureRect" parent="Start"]
 layout_mode = 2
