@@ -90,9 +90,6 @@ script = ExtResource("1_one21")
 [node name="Player" parent="." instance=ExtResource("2_vnra5")]
 transform = Transform3D(1, 0, 0, 0, 0.996019, -0.0891377, 0, 0.0891377, 0.996019, 7.23401, 1.79338, 13.6273)
 
-[node name="Camera3D" type="Camera3D" parent="Player"]
-transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 0, 2, 6)
-
 [node name="Environment" type="Node3D" parent="."]
 
 [node name="InvisibleWall" type="StaticBody3D" parent="Environment"]
@@ -166,3 +163,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.0806, 1.48267, 16.9086)
 curve = SubResource("Curve3D_jsijk")
 
 [node name="UIs" parent="." instance=ExtResource("5_7bjl6")]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.985151, 0.171688, 0, -0.171688, 0.985151, 23.7174, 3.25059, -19.217)
