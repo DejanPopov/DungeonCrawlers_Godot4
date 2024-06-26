@@ -14,6 +14,8 @@ public partial class UIControler : Control
         containers[ContainerType.Start].Visible = true;
 
         containers[ContainerType.Start].ButtonNode.Pressed += HandleStartPressed;
+
+
     }
 
     private void HandleStartPressed()
@@ -21,5 +23,7 @@ public partial class UIControler : Control
         GetTree().Paused = false;
 
         containers[ContainerType.Start].Visible = false;
+
+        GameEvents.RaiseStartGame();
     }
 }
