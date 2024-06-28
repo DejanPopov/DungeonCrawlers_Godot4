@@ -4,7 +4,7 @@ using Godot;
 [GlobalClass]
 public partial class StatResource : Resource
 {
-    public Action onZero;
+    public event Action onZero;
 
     [Export] public Stat  StatType  {get; private set;}
 
