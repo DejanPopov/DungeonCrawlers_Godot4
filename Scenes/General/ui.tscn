@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://by20ndys82iir"]
+[gd_scene load_steps=9 format=3 uid="uid://by20ndys82iir"]
 
 [ext_resource type="Texture2D" uid="uid://cv2lcmhemjsim" path="res://Assets/Sprites/UI/UI Element 1.png" id="1_4pkt4"]
 [ext_resource type="Script" path="res://Scripts/UI/UIControler.cs" id="1_otn3x"]
 [ext_resource type="Script" path="res://Scripts/UI/UIContainer.cs" id="2_iy836"]
 [ext_resource type="FontFile" uid="uid://b66gtag0ot82l" path="res://Assets/RifficFree-Bold.ttf" id="2_x8d2t"]
 [ext_resource type="Texture2D" uid="uid://bcwf3jvo21o57" path="res://Assets/Sprites/UI/UI Element 2.png" id="3_mw7av"]
+[ext_resource type="Texture2D" uid="uid://cjd32py4gsvw7" path="res://Assets/Sprites/UI/UI ElementUI 12.png" id="6_dhywh"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_x3tce"]
 texture = ExtResource("3_mw7av")
@@ -12,6 +13,9 @@ expand_margin_left = 48.0
 expand_margin_top = 8.0
 expand_margin_right = 48.0
 expand_margin_bottom = 16.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bkt2e"]
+texture = ExtResource("6_dhywh")
 
 [node name="UI" type="Control"]
 process_mode = 3
@@ -52,3 +56,14 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_x3tce")
 theme_override_styles/hover = SubResource("StyleBoxTexture_x3tce")
 theme_override_styles/focus = SubResource("StyleBoxTexture_x3tce")
 text = "Start Game"
+
+[node name="Stats" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 32.0
+offset_right = 232.0
+offset_bottom = 272.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_bkt2e")
+
+[node name="Panel" type="Panel" parent="Stats"]
+layout_mode = 2
