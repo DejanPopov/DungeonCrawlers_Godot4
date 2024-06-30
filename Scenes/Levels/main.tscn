@@ -166,7 +166,7 @@ curve = SubResource("Curve3D_jsijk")
 [node name="UIs" parent="." instance=ExtResource("5_7bjl6")]
 
 [node name="Camera3D" type="Camera3D" parent="." node_paths=PackedStringArray("target")]
-transform = Transform3D(1, 0, 0, 0, 0.985151, 0.171688, 0, -0.171688, 0.985151, 24.5153, 3.25059, -19.217)
+transform = Transform3D(1, 0, 0, 0, 0.985151, 0.171688, 0, -0.171688, 0.985151, 23.4317, 3.25059, -19.217)
 script = ExtResource("6_wqp4s")
 target = NodePath("../Player")
 positionFromTarget = Vector3(0, 2, 6)
