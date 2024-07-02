@@ -131,37 +131,55 @@ PathNode = NodePath("..")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.8368, 1.94507, 8.5896)
 curve = SubResource("Curve3D_jgvrd")
 
+[node name="Enemy" parent="Enemies/Path3D2" instance=ExtResource("4_xgd2j")]
+
 [node name="Path3D3" type="Path3D" parent="Enemies"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.8706, 1.68115, 22.6263)
 curve = SubResource("Curve3D_swo7x")
+
+[node name="Enemy" parent="Enemies/Path3D3" instance=ExtResource("4_xgd2j")]
 
 [node name="Path3D4" type="Path3D" parent="Enemies"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.4156, 1.37231, 20.9695)
 curve = SubResource("Curve3D_73ues")
 
+[node name="Enemy" parent="Enemies/Path3D4" instance=ExtResource("4_xgd2j")]
+
 [node name="Path3D5" type="Path3D" parent="Enemies"]
 transform = Transform3D(1, 0, 0, 0, 0.0826691, 0.996577, 0, -0.996577, 0.0826691, 23.4096, 1.49084, -2.44258)
 curve = SubResource("Curve3D_07t8h")
+
+[node name="Enemy" parent="Enemies/Path3D5" instance=ExtResource("4_xgd2j")]
 
 [node name="Path3D6" type="Path3D" parent="Enemies"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.1293, 1.72522, -30.7376)
 curve = SubResource("Curve3D_no0ne")
 
+[node name="Enemy" parent="Enemies/Path3D6" instance=ExtResource("4_xgd2j")]
+
 [node name="Path3D7" type="Path3D" parent="Enemies"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.5032, 1.63489, -30.8934)
 curve = SubResource("Curve3D_pcwlo")
+
+[node name="Enemy" parent="Enemies/Path3D7" instance=ExtResource("4_xgd2j")]
 
 [node name="Path3D8" type="Path3D" parent="Enemies"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.0027, 1.46423, -17.0552)
 curve = SubResource("Curve3D_y7hpn")
 
+[node name="Enemy" parent="Enemies" instance=ExtResource("4_xgd2j")]
+
 [node name="Path3D9" type="Path3D" parent="Enemies"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.5729, 3.51245, -17.8371)
 curve = SubResource("Curve3D_h3mjd")
 
+[node name="Enemy" parent="Enemies/Path3D9" instance=ExtResource("4_xgd2j")]
+
 [node name="Path3D10" type="Path3D" parent="Enemies"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.0806, 1.48267, 16.9086)
 curve = SubResource("Curve3D_jsijk")
+
+[node name="Enemy" parent="Enemies/Path3D10" instance=ExtResource("4_xgd2j")]
 
 [node name="UIs" parent="." instance=ExtResource("5_7bjl6")]
 
