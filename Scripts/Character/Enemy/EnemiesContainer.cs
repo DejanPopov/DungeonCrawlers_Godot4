@@ -7,5 +7,12 @@ public partial class EnemiesContainer : Node3D
     {
         int totalEnemies = GetChildCount();
         GameEvents.RaiseNewEnemyCount(totalEnemies);
+        ChildExitingTree += HandleChildExistingTree;
+    }
+
+    private void HandleChildExistingTree(Node node)
+    {
+        int totalEnemies = GetChildCount() - 1;
+        GameEvents.RaiseNewEnemyCount(totalEnemies);
     }
 }
