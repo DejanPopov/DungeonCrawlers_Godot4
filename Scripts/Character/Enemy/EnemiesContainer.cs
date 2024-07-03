@@ -14,5 +14,10 @@ public partial class EnemiesContainer : Node3D
     {
         int totalEnemies = GetChildCount() - 1;
         GameEvents.RaiseNewEnemyCount(totalEnemies);
+
+        if (totalEnemies == 0)
+        {
+            GameEvents.RaiseVicotory();
+        }
     }
 }
