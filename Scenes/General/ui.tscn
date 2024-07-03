@@ -176,6 +176,7 @@ text = "---"
 script = ExtResource("14_2x4i4")
 
 [node name="Defeat" type="PanelContainer" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -189,6 +190,8 @@ offset_bottom = 260.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_f2x72")
+script = ExtResource("2_iy836")
+container = 3
 
 [node name="MarginContainer" type="MarginContainer" parent="Defeat"]
 layout_mode = 2
