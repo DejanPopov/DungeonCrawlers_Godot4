@@ -267,7 +267,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 texture = ExtResource("17_22a67")
 
-[node name="Pause" type="PanelContainer" parent="."]
+[node name="Pause" type="PanelContainer" parent="." node_paths=PackedStringArray("ButtonNode")]
 visible = false
 layout_mode = 1
 anchors_preset = 8
@@ -284,6 +284,7 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_f2x72")
 script = ExtResource("2_iy836")
 container = 1
+ButtonNode = NodePath("MarginContainer/VBoxContainer/Button")
 
 [node name="MarginContainer" type="MarginContainer" parent="Pause"]
 layout_mode = 2
