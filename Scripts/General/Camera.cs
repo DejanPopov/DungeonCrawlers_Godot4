@@ -9,7 +9,7 @@ public partial class Camera : Camera3D
     public override void _Ready()
     {
         GameEvents.onStartGame += HandleStartGame;
-        GameEvents.onStartGame += HandleEndGame;
+        GameEvents.onEndGame += HandleEndGame;
     }
 
     private void HandleEndGame()
@@ -20,6 +20,7 @@ public partial class Camera : Camera3D
     private void HandleStartGame()
     {
         Reparent(target);
+        
         Position = positionFromTarget;
     }
 }
