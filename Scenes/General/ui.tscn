@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://by20ndys82iir"]
+[gd_scene load_steps=26 format=3 uid="uid://by20ndys82iir"]
 
 [ext_resource type="Texture2D" uid="uid://cv2lcmhemjsim" path="res://Assets/Sprites/UI/UI Element 1.png" id="1_4pkt4"]
 [ext_resource type="Script" path="res://Scripts/UI/UIControler.cs" id="1_otn3x"]
@@ -19,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://c71b06x62d0oq" path="res://Assets/Sprites/UI/UI ElementUI 11.png" id="17_22a67"]
 [ext_resource type="Texture2D" uid="uid://cmaq28mblwgiy" path="res://Assets/Sprites/UI/UI Element 5.png" id="18_1dl8h"]
 [ext_resource type="Texture2D" uid="uid://cp8u7txigc7ue" path="res://Assets/Sprites/UI/UI Element 4.png" id="19_lytfg"]
+[ext_resource type="Texture2D" uid="uid://52pu33jvhlve" path="res://Assets/Sprites/UI/UI ElementUI 13.png" id="20_rsgn3"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_x3tce"]
 texture = ExtResource("3_mw7av")
@@ -321,7 +322,6 @@ theme_override_styles/focus = SubResource("StyleBoxTexture_rio0r")
 text = "CONTINUE!"
 
 [node name="Reward" type="PanelContainer" parent="." node_paths=PackedStringArray("ButtonNode")]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -360,7 +360,7 @@ horizontal_alignment = 1
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture = ExtResource("18_1dl8h")
+texture = ExtResource("20_rsgn3")
 
 [node name="Button" type="Button" parent="Reward/MarginContainer/VBoxContainer"]
 layout_mode = 2
