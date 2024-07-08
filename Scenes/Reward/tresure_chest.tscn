@@ -1,3 +1,10 @@
-[gd_scene format=3 uid="uid://b2kv0aq50ny8t"]
+[gd_scene load_steps=2 format=3 uid="uid://b2kv0aq50ny8t"]
+
+[ext_resource type="Texture2D" uid="uid://mqg73hd8sg66" path="res://Assets/Sprites/General/16x16.png" id="1_ukjq0"]
 
 [node name="TresureChest" type="StaticBody3D"]
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+texture = ExtResource("1_ukjq0")
+region_enabled = true
+region_rect = Rect2(16, 7, 16, 23)
