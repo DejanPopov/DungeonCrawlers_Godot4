@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://b2kv0aq50ny8t"]
+
+[node name="TresureChest" type="StaticBody3D"]
