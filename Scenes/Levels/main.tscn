@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://dxmxn100tuf5j"]
+[gd_scene load_steps=33 format=3 uid="uid://dxmxn100tuf5j"]
 
 [ext_resource type="Script" path="res://Scripts/Levels/Main.cs" id="1_one21"]
 [ext_resource type="PackedScene" uid="uid://d4lbyuvtx7bmy" path="res://Scenes/Characters/Player/player.tscn" id="2_vnra5"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://by20ndys82iir" path="res://Scenes/General/ui.tscn" id="5_7bjl6"]
 [ext_resource type="Script" path="res://Scripts/General/Camera.cs" id="6_wqp4s"]
 [ext_resource type="Script" path="res://Scripts/Resources/StatResource.cs" id="7_7tm0f"]
+[ext_resource type="PackedScene" uid="uid://b2kv0aq50ny8t" path="res://Scenes/Reward/tresure_chest.tscn" id="9_7alag"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7tyao"]
 size = Vector3(2.13428, 2.73621, 1)
@@ -270,3 +271,6 @@ transform = Transform3D(1, 0, 0, 0, 0.985151, 0.171688, 0, -0.171688, 0.985151, 
 script = ExtResource("6_wqp4s")
 target = NodePath("../Player")
 positionFromTarget = Vector3(0, 2, 6)
+
+[node name="TresureChest" parent="." instance=ExtResource("9_7alag")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.7478, 1.63873, 9.3429)
