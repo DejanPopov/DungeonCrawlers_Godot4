@@ -322,6 +322,7 @@ theme_override_styles/focus = SubResource("StyleBoxTexture_rio0r")
 text = "CONTINUE!"
 
 [node name="Reward" type="PanelContainer" parent="." node_paths=PackedStringArray("ButtonNode")]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
