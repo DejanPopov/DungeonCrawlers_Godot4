@@ -15,9 +15,16 @@ public partial class TresureChest : StaticBody3D
 
     public override void _Input(InputEvent @event)
     {
-        if (!areaNode.HasOverlappingBodies() || !Input.IsActionJustPressed(GameConstants.INPUT_INTERACT))
+        if (!areaNode.Monitoring || !areaNode.HasOverlappingBodies() || !Input.IsActionJustPressed(GameConstants.INPUT_INTERACT))
         {
             return;
         };
+
+        areaNode.Monitoring = false;
+
+        GameEvents.RaiseReward(reward);
+
     }
+
+    
 }
