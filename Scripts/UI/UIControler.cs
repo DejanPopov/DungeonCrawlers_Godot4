@@ -14,14 +14,30 @@ public partial class UIControler : Control
 
         containers[ContainerType.Start].Visible = true;
 
-        containers[ContainerType.Start].ButtonNode.Pressed += HandleStartPressed;
-        containers[ContainerType.Pause].ButtonNode.Pressed += HandlePausePressed;
+        containers[ContainerType.Start].ButtonNode.Pressed  += HandleStartPressed;
+        containers[ContainerType.Pause].ButtonNode.Pressed  += HandlePausePressed;
         containers[ContainerType.Reward].ButtonNode.Pressed += HandleRewardPressed;
 
         GameEvents.onEndGame += HandleEndGame;
         GameEvents.onVictory += HandleVictory;
-        GameEvents.onReward += HandleReward;
+        GameEvents.onReward  += HandleReward;
+    }
 
+        public override void _Input(InputEvent @event)
+    {
+        if (!canPause)
+        {
+            return;
+        }
+
+        if (!Input.IsActionJustPressed(GameConstants.INPUT_PAUSE))
+        {
+            return;
+        }
+
+        containers[ContainerType.Stats].Visible = GetTree().Paused;
+        GetTree().Paused = !GetTree().Paused;
+        containers[ContainerType.Pause].Visible = GetTree().Paused;
     }
 
     private void HandleRewardPressed()
@@ -52,24 +68,7 @@ public partial class UIControler : Control
         containers[ContainerType.Stats].Visible = true;
 
     }
-
-    public override void _Input(InputEvent @event)
-    {
-        if (!canPause)
-        {
-            return;
-        }
-
-        if (!Input.IsActionJustPressed(GameConstants.INPUT_PAUSE))
-        {
-            return;
-        }
-
-        containers[ContainerType.Start].Visible = GetTree().Paused;
-        GetTree().Paused = !GetTree().Paused;
-        containers[ContainerType.Pause].Visible = GetTree().Paused;
-    }
-
+    
     private void HandleVictory()
     {
         canPause = false;
