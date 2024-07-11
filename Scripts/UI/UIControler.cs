@@ -23,7 +23,7 @@ public partial class UIControler : Control
         GameEvents.onReward  += HandleReward;
     }
 
-        public override void _Input(InputEvent @event)
+    public override void _Input(InputEvent @event)
     {
         if (!canPause)
         {
