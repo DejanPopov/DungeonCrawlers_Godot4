@@ -1,4 +1,4 @@
-[gd_scene load_steps=97 format=3 uid="uid://d4lbyuvtx7bmy"]
+[gd_scene load_steps=99 format=3 uid="uid://d4lbyuvtx7bmy"]
 
 [ext_resource type="Texture2D" uid="uid://b3d4s75xtbj7p" path="res://Assets/Sprites/Characters/Player/Running/Running_011.png" id="1_q2ln2"]
 [ext_resource type="Script" path="res://Scripts/Character/Player/Player.cs" id="1_ypwly"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://bgw2fsl6cnkm3" path="res://Assets/Sprites/Characters/Player/Dying/Dying_014.png" id="3_7yxns"]
 [ext_resource type="Resource" uid="uid://yenbtgcb3ipp" path="res://Resources/player_strength_stat.tres" id="3_r8bl0"]
 [ext_resource type="Texture2D" uid="uid://dq43xybu6s14k" path="res://Assets/Sprites/Characters/Player/Idle Blinking/Idle Blinking_001.png" id="3_tmawq"]
+[ext_resource type="Shader" path="res://Shaders/character_hurt.gdshader" id="4_eb62u"]
 [ext_resource type="Texture2D" uid="uid://mcklrrcvadlb" path="res://Assets/Sprites/Characters/Player/Idle Blinking/Idle Blinking_002.png" id="4_q5hbp"]
 [ext_resource type="Texture2D" uid="uid://ddirtq1inctnu" path="res://Assets/Sprites/Characters/Player/Idle Blinking/Idle Blinking_003.png" id="5_bjwb6"]
 [ext_resource type="Texture2D" uid="uid://bb1t3wdn05cm2" path="res://Assets/Sprites/Characters/Player/Idle Blinking/Idle Blinking_004.png" id="6_dmoj5"]
@@ -87,6 +88,10 @@
 [ext_resource type="Script" path="res://Scripts/Character/Player/PlayerDeathState.cs" id="83_58m5y"]
 [ext_resource type="PackedScene" uid="uid://ds0ebk6ru8c6l" path="res://Scenes/Abilities/lightning.tscn" id="85_bqg7d"]
 [ext_resource type="Script" path="res://Scripts/Character/AttckHitbox.cs" id="86_26oqm"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3vipe"]
+render_priority = 0
+shader = ExtResource("4_eb62u")
 
 [sub_resource type="Animation" id="Animation_xyty7"]
 resource_name = "Attack1"
@@ -243,6 +248,7 @@ HitBoxShapeNode = NodePath("Hitbox/CollisionShape3D")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.260491, 0, 0)
+material_overlay = SubResource("ShaderMaterial_3vipe")
 pixel_size = 0.0025
 texture_filter = 0
 texture = ExtResource("3_7yxns")
