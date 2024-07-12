@@ -3,6 +3,7 @@ using System;
 
 public partial class Bomb : Node3D
 {
+    [Export] public float Damage { get; private set; } = 10;
     [Export] private AnimationPlayer playerNode;
 
     public override void _Ready()
