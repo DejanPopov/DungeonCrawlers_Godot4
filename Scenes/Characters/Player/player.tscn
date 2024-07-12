@@ -90,8 +90,11 @@
 [ext_resource type="Script" path="res://Scripts/Character/AttckHitbox.cs" id="86_26oqm"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3vipe"]
-render_priority = 0
+render_priority = 1
 shader = ExtResource("4_eb62u")
+shader_parameter/active = false
+shader_parameter/flash_color = Color(1, 1, 1, 1)
+shader_parameter/tex = ExtResource("3_7yxns")
 
 [sub_resource type="Animation" id="Animation_xyty7"]
 resource_name = "Attack1"
