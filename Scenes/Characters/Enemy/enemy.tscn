@@ -1,4 +1,4 @@
-[gd_scene load_steps=122 format=3 uid="uid://s25vexk4gbij"]
+[gd_scene load_steps=124 format=3 uid="uid://s25vexk4gbij"]
 
 [ext_resource type="Texture2D" uid="uid://cvvr88n5l7ayu" path="res://Assets/Sprites/Characters/Enemy Knight/TakeHit/0_Demons_of_Darkness_Hurt_011.png" id="1_0awgw"]
 [ext_resource type="Script" path="res://Scripts/Character/Enemy/Enemy.cs" id="1_01l1x"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bavxxpd27quc2" path="res://Assets/Sprites/Characters/Enemy Knight/Idle/0_Demons_of_Darkness_Idle_001.png" id="1_hfwd7"]
 [ext_resource type="Script" path="res://Scripts/Resources/StatResource.cs" id="2_1w8e8"]
 [ext_resource type="Texture2D" uid="uid://bdositi4w0ee4" path="res://Assets/Sprites/Characters/Enemy Knight/Idle/0_Demons_of_Darkness_Idle_000.png" id="2_yr4i2"]
+[ext_resource type="Shader" path="res://Shaders/character_hurt.gdshader" id="3_d45k4"]
 [ext_resource type="Texture2D" uid="uid://dvlfg538wtij1" path="res://Assets/Sprites/Characters/Enemy Knight/Idle/0_Demons_of_Darkness_Idle_002.png" id="4_e8320"]
 [ext_resource type="Texture2D" uid="uid://bynxs2xdrkf6v" path="res://Assets/Sprites/Characters/Enemy Knight/Idle/0_Demons_of_Darkness_Idle_003.png" id="5_igick"]
 [ext_resource type="Texture2D" uid="uid://cdij50y5y1nl6" path="res://Assets/Sprites/Characters/Enemy Knight/Idle/0_Demons_of_Darkness_Idle_004.png" id="6_rp2ot"]
@@ -119,6 +120,13 @@ StatValue = 20.0
 script = ExtResource("2_1w8e8")
 StatType = 1
 StatValue = 4.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ubhii"]
+render_priority = 1
+shader = ExtResource("3_d45k4")
+shader_parameter/active = false
+shader_parameter/flash_color = Color(1, 1, 1, 1)
+shader_parameter/tex = ExtResource("20_pmkxm")
 
 [sub_resource type="Animation" id="Animation_4h0t2"]
 resource_name = "Attack"
@@ -265,6 +273,7 @@ ChaseAreaNode = NodePath("ChaseArea")
 AttackAreaNode = NodePath("AttackArea")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
+material_overlay = SubResource("ShaderMaterial_ubhii")
 pixel_size = 0.0025
 texture = ExtResource("20_pmkxm")
 
