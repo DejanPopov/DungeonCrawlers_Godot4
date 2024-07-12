@@ -1,6 +1,7 @@
-[gd_scene load_steps=16 format=3 uid="uid://bc8duse607xfp"]
+[gd_scene load_steps=17 format=3 uid="uid://bc8duse607xfp"]
 
 [ext_resource type="Texture2D" uid="uid://d0ls6vna1y6lg" path="res://Assets/Sprites/Effects/Explosion/Bomb.png" id="1_4gg7q"]
+[ext_resource type="Script" path="res://Scripts/Abilities/Bomb.cs" id="1_jg2sg"]
 [ext_resource type="Texture2D" uid="uid://d1wqxqiy7buy6" path="res://Assets/Sprites/Effects/Explosion/1.png" id="2_tskag"]
 [ext_resource type="Texture2D" uid="uid://c4rh5b1lkabj8" path="res://Assets/Sprites/Effects/Explosion/2.png" id="3_v68r5"]
 [ext_resource type="Texture2D" uid="uid://b68vxmqlxsm2j" path="res://Assets/Sprites/Effects/Explosion/3.png" id="4_78y3b"]
@@ -88,7 +89,9 @@ _data = {
 [sub_resource type="SphereShape3D" id="SphereShape3D_6i4mw"]
 radius = 4.0
 
-[node name="Bomb" type="Node3D"]
+[node name="Bomb" type="Node3D" node_paths=PackedStringArray("playerNode")]
+script = ExtResource("1_jg2sg")
+playerNode = NodePath("AnimationPlayer")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 pixel_size = 0.02

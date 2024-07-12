@@ -16,6 +16,10 @@ public partial class Bomb : Node3D
         {
             playerNode.Play(GameConstants.ANIM_EXPLOSION);
         }
+        else
+        {
+            QueueFree();
+        }
     }
 }
 
