@@ -9,7 +9,7 @@ public partial class Camera : Camera3D
     public override void _Ready()
     {
         GameEvents.onStartGame += HandleStartGame;
-        GameEvents.onEndGame += HandleEndGame;
+        GameEvents.onEndGame   += HandleEndGame;
     }
 
     private void HandleEndGame()
