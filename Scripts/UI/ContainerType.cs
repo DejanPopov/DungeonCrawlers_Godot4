@@ -3,7 +3,7 @@ public enum ContainerType
     Start,
     Pause,
     Victory,
-    defeat,
+    Defeat,
     Stats,
     Reward
 }

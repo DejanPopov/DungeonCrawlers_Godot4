@@ -10,7 +10,7 @@ public partial class TresureChest : StaticBody3D
     public override void _Ready()
     {
         areaNode.BodyEntered += (body) => spriteNode.Visible = true;
-        areaNode.BodyExited += (body) => spriteNode.Visible = false;
+        areaNode.BodyExited  += (body) => spriteNode.Visible = false;
     }
 
     public override void _Input(InputEvent @event)
