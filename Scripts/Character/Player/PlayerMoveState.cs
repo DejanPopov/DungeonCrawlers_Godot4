@@ -25,7 +25,7 @@ public partial class PlayerMoveState : PlayerState
         characterNode.AnimPlayerNode.Play(GameConstants.ANIM_MOVE);
     }
 
-       public override void _Input(InputEvent @event)
+    public override void _Input(InputEvent @event)
     {
         CheckForAttackInput();
         
