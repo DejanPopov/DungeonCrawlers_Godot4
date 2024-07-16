@@ -9,19 +9,12 @@ public partial class EnemyAttackState : EnemyState
     protected override void EnterState()
     {
         characterNode.AnimPlayerNode.Play(GameConstants.ANIM_ATTACK);
-
         Node3D target = characterNode.AttackAreaNode.GetOverlappingBodies().First();
 
         targetPosition = target.GlobalPosition;
-    }
-
-    private void PerformHit()
-    {
-        characterNode.ToggleHitbox(false);
-        characterNode.HitBoxNode.GlobalPosition = targetPosition;
-
         characterNode.AnimPlayerNode.AnimationFinished += HandleAnimationFinished;
     }
+
     protected override void ExitState()
     {
         characterNode.AnimPlayerNode.AnimationFinished -= HandleAnimationFinished;
@@ -42,7 +35,7 @@ public partial class EnemyAttackState : EnemyState
                 characterNode.StateMachineNode.SwitchState<EnemyReturnState>();
                 return;
             }
-            
+
             characterNode.StateMachineNode.SwitchState<EnemyChaseState>();
             return;
         }
@@ -51,7 +44,12 @@ public partial class EnemyAttackState : EnemyState
         targetPosition = target.GlobalPosition;
 
         Vector3 direction = characterNode.GlobalPosition.DirectionTo(targetPosition);
-
         characterNode.SpriteNode.FlipH = direction.X < 0;
+    }
+
+    private void PerformHit()
+    {
+        characterNode.ToggleHitbox(false);
+        characterNode.HitboxNode.GlobalPosition = targetPosition;
     }
 }

@@ -5,37 +5,34 @@ using System.Linq;
 public partial class EnemyChaseState : EnemyState
 {
     [Export] private Timer timerNode;
-    private CharacterBody3D target;
 
-        public override void _PhysicsProcess(double delta)
-    {
-        Move();
-    }
+    private CharacterBody3D target;
 
     protected override void EnterState()
     {
         characterNode.AnimPlayerNode.Play(GameConstants.ANIM_MOVE);
-        target = characterNode.ChaseAreaNode.GetOverlappingBodies().First() as CharacterBody3D;
+
+        target = characterNode.ChaseAreaNode
+            .GetOverlappingBodies()
+            .First() as CharacterBody3D;
+
         timerNode.Timeout += HandleTimeout;
         characterNode.AttackAreaNode.BodyEntered += HandleAttackAreaBodyEntered;
-        characterNode.ChaseAreaNode.BodyExited += HandleChaseAreaBodyExisted;
+        characterNode.ChaseAreaNode.BodyExited += HandleChaseAreaBodyExited;
     }
 
-        protected override void ExitState()
+
+
+    protected override void ExitState()
     {
         timerNode.Timeout -= HandleTimeout;
         characterNode.AttackAreaNode.BodyEntered -= HandleAttackAreaBodyEntered;
-        characterNode.ChaseAreaNode.BodyExited -= HandleChaseAreaBodyExisted;
+        characterNode.ChaseAreaNode.BodyExited -= HandleChaseAreaBodyExited;
     }
 
-    private void HandleChaseAreaBodyExisted(Node3D body)
+    public override void _PhysicsProcess(double delta)
     {
-        characterNode.StateMachineNode.SwitchState<EnemyReturnState>();
-    }
-
-    private void HandleAttackAreaBodyEntered(Node3D body)
-    {
-        characterNode.StateMachineNode.SwitchState<EnemyAttackState>();
+        Move();
     }
 
     private void HandleTimeout()
@@ -44,8 +41,13 @@ public partial class EnemyChaseState : EnemyState
         characterNode.AgentNode.TargetPosition = destination;
     }
 
+    private void HandleAttackAreaBodyEntered(Node3D body)
+    {
+        characterNode.StateMachineNode.SwitchState<EnemyAttackState>();
+    }
 
-
-
+    private void HandleChaseAreaBodyExited(Node3D body)
+    {
+        characterNode.StateMachineNode.SwitchState<EnemyReturnState>();
+    }
 }
-
