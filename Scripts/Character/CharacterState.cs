@@ -1,12 +1,15 @@
 using Godot;
+using System;
 
 public abstract partial class CharacterState : Node
 {
     protected Character characterNode;
+    public Func<bool> CanTransition = () => true;
 
     public override void _Ready()
     {
         characterNode = GetOwner<Character>();
+
         SetPhysicsProcess(false);
         SetProcessInput(false);
     }
@@ -30,7 +33,6 @@ public abstract partial class CharacterState : Node
         }
     }
 
-    protected virtual void EnterState(){}
-    protected virtual void ExitState(){}
-
+    protected virtual void EnterState() { }
+    protected virtual void ExitState() { }
 }
